@@ -83,7 +83,7 @@ const Portfolio = () =>
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }} // changed from 0.3 to 0
           className="max-w-7xl mx-auto"
         >
           {/* Section Header */}
@@ -109,8 +109,8 @@ const Portfolio = () =>
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeFilter === filter.key
-                    ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
-                    : 'bg-gray-100 dark:bg-dark-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
+                  ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
+                  : 'bg-gray-100 dark:bg-dark-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
