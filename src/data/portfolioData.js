@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Mukesh Jena",
   title: "Dot Net Developer",
   subtitle: "ASP.NET Core | MVC | C# | WebAPI | SQL Server | Microservices | Docker | Azure | Entity Framework | jQuery",
-  description: "I'm Mukesh Jena, an expert in Flutter, Android and frontend web development. I excel in creating cross-platform mobile apps and web experiences with innovation, and high-quality solutions.",
+  description: "I'm Mukesh Jena, a passionate Dot Net Developer specializing in ASP.NET Core, MVC, C#, WebAPI, and SQL Server. I excel at building robust, scalable backend systems and delivering high-quality web solutions using the latest Microsoft technologies.",
   email: "muk3shjena@gmail.com",
   phone: "7735317930",
   location: "Nahara, Demuria, Jaleswer, Balasore, Odisha",
