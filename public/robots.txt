@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mukeshjena.com/sitemap.xml
+Sitemap: https://mukeshjena.com/sitemap.xml
