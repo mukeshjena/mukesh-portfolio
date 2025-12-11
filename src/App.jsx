@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/void-browser-privacy-policy" element={<VoidBrowserPrivacyPolicy />} />
+          <Route path="/void-browser-privacy-policy-v1" element={<VoidBrowserPrivacyPolicy />} />
         </Routes>
       </Router>
     </ThemeProvider>
