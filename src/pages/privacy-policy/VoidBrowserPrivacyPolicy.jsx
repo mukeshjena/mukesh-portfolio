@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-const VoidBrowserPrivacyPolicy = () => {
+const VexFastPrivacyBrowserPrivacyPolicy = () => {
   const navigate = useNavigate();
 
   return (
@@ -16,10 +16,10 @@ const VoidBrowserPrivacyPolicy = () => {
             className="bg-white dark:bg-dark-200 rounded-lg p-8 md:p-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-              Void Browser Privacy Policy
+              Vex Fast Privacy Browser Privacy Policy
             </h1>
             <p className="text-gray-500 dark:text-gray-400 mb-8">
-              Last updated: December 11, 2025
+              Last updated: December 15, 2025
             </p>
 
             <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -28,13 +28,13 @@ const VoidBrowserPrivacyPolicy = () => {
                   1. Introduction
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Welcome to Void Browser. We are committed to protecting 
-                  your privacy and ensuring you have a positive, secure browsing experience. Void 
+                  Welcome to Vex Fast Privacy Browser. We are committed to protecting 
+                  your privacy and ensuring you have a positive, secure browsing experience. Vex Fast Privacy 
                   Browser is an ultra-lightweight, privacy-focused mobile browser built for Android 
                   devices.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  This Privacy Policy explains how we handle your information when you use Void 
+                  This Privacy Policy explains how we handle your information when you use Vex Fast Privacy 
                   Browser. Please read this privacy policy carefully. If you do not agree with 
                   the terms of this privacy policy, please do not use the application.
                 </p>
@@ -46,7 +46,7 @@ const VoidBrowserPrivacyPolicy = () => {
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                   <strong>We do not collect, store, or transmit any personal information.</strong> 
-                  Void Browser is designed with privacy as a core principle. All data generated 
+                  Vex Fast Privacy Browser is designed with privacy as a core principle. All data generated 
                   and used by the application is stored exclusively on your device and never 
                   transmitted to our servers or any third-party services for tracking purposes.
                 </p>
@@ -81,7 +81,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   3. Information Stored Locally on Your Device
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Void Browser stores the following data locally on your device using secure local 
+                  Vex Fast Privacy Browser stores the following data locally on your device using secure local 
                   storage (Hive database and SharedPreferences):
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
@@ -99,7 +99,7 @@ const VoidBrowserPrivacyPolicy = () => {
                 </ul>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                   <strong>Biometric Data:</strong> If you enable the biometric app lock feature, 
-                  authentication is handled entirely by your device's secure hardware. Void Browser 
+                  authentication is handled entirely by your device's secure hardware. Vex Fast Privacy Browser 
                   does not store, access, or transmit any biometric data (fingerprints, face data, etc.). 
                   All biometric processing occurs on your device using Android's secure biometric API, 
                   and we have no access to this information.
@@ -118,7 +118,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   4. Third-Party Services and APIs
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Void Browser uses third-party APIs to provide discovery features. These services 
+                  Vex Fast Privacy Browser uses third-party APIs to provide discovery features. These services 
                   are used only for fetching content and do not involve transmitting your personal 
                   information:
                 </p>
@@ -127,8 +127,8 @@ const VoidBrowserPrivacyPolicy = () => {
                   <li><strong>Unsplash API (unsplash.com):</strong> Provides images for the discovery panel and image search feature. No personal data, device identifiers, or user information is shared with Unsplash. API requests may include search terms if you search for images, but these are not associated with your identity.</li>
                   <li><strong>TheMealDB API (themealdb.com):</strong> Provides recipe information for the recipes discovery feature. This is a public API that does not require authentication or receive personal information. Only recipe search queries may be sent, which are not linked to your identity.</li>
                   <li><strong>Open-Meteo API (open-meteo.com):</strong> Provides weather forecast data. If you grant location permission and use the weather feature, only your device's GPS coordinates are sent to fetch weather data. This location data is not stored by Open-Meteo or by us, and is only used for the specific weather request. No other personal information is transmitted.</li>
-                  <li><strong>EasyList Filter Lists:</strong> Void Browser downloads ad-blocking filter lists from EasyList (easylist-downloads.adblockplus.org) and related sources. These are publicly available filter rules used to block advertisements and tracking scripts. No personal information is sent when downloading these filter lists.</li>
-                  <li><strong>Search Engines:</strong> When you perform a search using Void Browser, your search query is sent to your selected search engine (Google, Bing, or DuckDuckGo) according to their privacy policies. We do not modify, intercept, or store your search queries. The search engine you choose will handle your queries according to their own privacy policies.</li>
+                  <li><strong>EasyList Filter Lists:</strong> Vex Fast Privacy Browser downloads ad-blocking filter lists from EasyList (easylist-downloads.adblockplus.org) and related sources. These are publicly available filter rules used to block advertisements and tracking scripts. No personal information is sent when downloading these filter lists.</li>
+                  <li><strong>Search Engines:</strong> When you perform a search using Vex Fast Privacy Browser, your search query is sent to your selected search engine (Google, Bing, or DuckDuckGo) according to their privacy policies. We do not modify, intercept, or store your search queries. The search engine you choose will handle your queries according to their own privacy policies.</li>
                 </ul>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                   <strong>Important:</strong> We do not share, sell, or transmit your personal information 
@@ -137,7 +137,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   recommend reviewing the privacy policies of these services if you have concerns.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  When you browse websites using Void Browser, those websites may collect 
+                  When you browse websites using Vex Fast Privacy Browser, those websites may collect 
                   information according to their own privacy policies. We are not responsible for 
                   the privacy practices of external websites you visit. Our ad-blocking feature helps 
                   protect your privacy by blocking many tracking scripts, but websites may still 
@@ -150,7 +150,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   5. Location Data
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Void Browser requests location permission only if you choose to use the weather 
+                  Vex Fast Privacy Browser requests location permission only if you choose to use the weather 
                   feature. Location data is handled as follows:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
@@ -175,7 +175,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   6. Android Permissions
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Void Browser requires the following Android permissions to provide its features:
+                  Vex Fast Privacy Browser requires the following Android permissions to provide its features:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
                   <li><strong>INTERNET:</strong> Required for web browsing and fetching content from websites. This is essential for the browser to function.</li>
@@ -184,7 +184,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   <li><strong>WRITE_EXTERNAL_STORAGE / READ_EXTERNAL_STORAGE:</strong> Required for downloading files to your device and opening files from external storage (Android versions below 13). These permissions allow you to save files from the internet to your device's storage and open downloaded files.</li>
                   <li><strong>READ_MEDIA_IMAGES / READ_MEDIA_VIDEO / READ_MEDIA_AUDIO:</strong> Required for opening image, video, and audio files from public storage on Android 13 and above. These permissions are requested at runtime when you attempt to open media files. The app does not access your media files without your explicit action.</li>
                   <li><strong>POST_NOTIFICATIONS:</strong> Required for displaying download progress notifications on Android 13 and above. This allows you to track file downloads in the background.</li>
-                  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT:</strong> Optional permissions used for the biometric app lock feature. If you enable fingerprint lock, these permissions allow the app to authenticate using your device's biometric authentication system. Biometric data is processed entirely by your device's secure hardware and is never accessed, stored, or transmitted by Void Browser.</li>
+                  <li><strong>USE_BIOMETRIC / USE_FINGERPRINT:</strong> Optional permissions used for the biometric app lock feature. If you enable fingerprint lock, these permissions allow the app to authenticate using your device's biometric authentication system. Biometric data is processed entirely by your device's secure hardware and is never accessed, stored, or transmitted by Vex Fast Privacy Browser.</li>
                   <li><strong>CAMERA:</strong> Optional permission requested only when you use the QR code scanner feature. The camera is used solely to scan QR codes for quick URL access. No images or video are captured, stored, or transmitted. Camera access is only active when the QR scanner is open.</li>
                   <li><strong>RECORD_AUDIO:</strong> Optional permission requested only when you use the voice search feature. Audio is processed locally on your device using Android's speech-to-text service and is not recorded, stored, or transmitted. Audio processing only occurs when you actively use voice search.</li>
                 </ul>
@@ -201,7 +201,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   7. Ad-Blocking and Privacy Features
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Void Browser includes built-in ad-blocking using EasyList filter lists. This feature:
+                  Vex Fast Privacy Browser includes built-in ad-blocking using EasyList filter lists. This feature:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
                   <li>Blocks advertisements and tracking scripts on websites you visit</li>
@@ -266,7 +266,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   <li><strong>Ad-Blocking:</strong> You can enable or disable ad-blocking at any time in settings</li>
                 </ul>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  You are not required to provide any personal information to use Void Browser, 
+                  You are not required to provide any personal information to use Vex Fast Privacy Browser, 
                   and you can use the app without creating any accounts or profiles. All features 
                   are available without registration or login.
                 </p>
@@ -281,7 +281,7 @@ const VoidBrowserPrivacyPolicy = () => {
                   10. Children's Privacy
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Void Browser does not knowingly collect personal information from children under 
+                  Vex Fast Privacy Browser does not knowingly collect personal information from children under 
                   the age of 13 (or the applicable age in your jurisdiction). Since we do not collect 
                   any personal information from anyone, this policy applies to all users regardless 
                   of age.
@@ -350,5 +350,4 @@ const VoidBrowserPrivacyPolicy = () => {
   );
 };
 
-export default VoidBrowserPrivacyPolicy;
-
+export default VexFastPrivacyBrowserPrivacyPolicy;

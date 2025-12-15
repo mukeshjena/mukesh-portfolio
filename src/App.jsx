@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
-import VoidBrowserPrivacyPolicy from './pages/privacy-policy/VoidBrowserPrivacyPolicy';
+import VexFastPrivacyBrowserPrivacyPolicy from './pages/privacy-policy/VoidBrowserPrivacyPolicy';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/void-browser-privacy-policy-v1" element={<VoidBrowserPrivacyPolicy />} />
+          <Route path="/vex-fast-privacy-browser-privacy-policy" element={<VexFastPrivacyBrowserPrivacyPolicy />} />
         </Routes>
       </Router>
     </ThemeProvider>
