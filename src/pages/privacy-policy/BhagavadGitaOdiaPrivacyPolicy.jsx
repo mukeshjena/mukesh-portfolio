@@ -73,7 +73,7 @@ const BhagavadGitaOdiaPrivacyPolicy = () => {
           Contact Us
         </h2>
         <p>
-          If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at mukeshjena@example.com (please update with your real email).
+          If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at muk3shjena@gmail.com.
         </p>
       </div>
     </div>
