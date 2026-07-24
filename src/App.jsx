@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
 import VexFastPrivacyBrowserPrivacyPolicy from './pages/privacy-policy/VoidBrowserPrivacyPolicy';
+import BhagavadGitaOdiaPrivacyPolicy from './pages/privacy-policy/BhagavadGitaOdiaPrivacyPolicy';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/vex-fast-privacy-browser-privacy-policy" element={<VexFastPrivacyBrowserPrivacyPolicy />} />
+          <Route path="/bhagavad-gita-odia-privacy-policy" element={<BhagavadGitaOdiaPrivacyPolicy />} />
         </Routes>
       </Router>
     </ThemeProvider>
