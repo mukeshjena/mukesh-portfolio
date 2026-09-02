@@ -72,7 +72,7 @@ const Header = () =>
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-out ${isScrolled
-          ? 'bg-white/80 dark:bg-dark-100/80 backdrop-blur-lg border-b border-gray-200/60 dark:border-gray-700/60'
+          ? 'bg-slate-50/85 dark:bg-dark-100/85 backdrop-blur-xl border-b border-slate-200/80 dark:border-white/[0.08]'
           : 'bg-transparent'
         }`}
     >
@@ -93,7 +93,7 @@ const Header = () =>
               onClick={() => scrollToSection(item.id)}
               className={`relative p-3 rounded-full transition-colors duration-200 ease-out ${activeSection === item.id
                   ? 'bg-primary-600 text-white'
-                  : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                  : 'text-slate-600 dark:text-zinc-400 hover:text-primary-600 dark:hover:text-primary-400'
                 }`}
               whileTap={{ scale: 0.95 }}
             >
@@ -115,7 +115,7 @@ const Header = () =>
           {/* Theme Toggle */}
           <motion.button
             onClick={toggleTheme}
-            className="p-3 rounded-full bg-gray-100 dark:bg-dark-200 text-gray-600 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+            className="p-3 rounded-full bg-slate-100 dark:bg-dark-200 text-slate-600 dark:text-zinc-300 border border-slate-200/80 dark:border-white/[0.08] hover:border-primary-400/50 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
             whileTap={{ scale: 0.95 }}
           >
             {isDark ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
@@ -124,7 +124,7 @@ const Header = () =>
           {/* Mobile Menu Toggle */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 rounded-full bg-gray-100 dark:bg-dark-200 text-gray-600 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60"
+            className="md:hidden p-3 rounded-full bg-slate-100 dark:bg-dark-200 text-slate-600 dark:text-zinc-300 border border-slate-200/80 dark:border-white/[0.08]"
             whileTap={{ scale: 0.95 }}
           >
             {isMenuOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
@@ -139,7 +139,7 @@ const Header = () =>
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-dark-100 border-t border-gray-200/60 dark:border-gray-700/60"
+            className="md:hidden bg-slate-50/95 dark:bg-dark-100/95 backdrop-blur-xl border-t border-slate-200/80 dark:border-white/[0.08]"
           >
             <div className="container py-4">
               <div className="flex flex-col space-y-2">
@@ -147,9 +147,9 @@ const Header = () =>
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center space-x-3 p-3 rounded-lg transition-colors duration-200 ease-out ${activeSection === item.id
+                    className={`flex items-center space-x-3 p-3 rounded-xl transition-colors duration-200 ease-out ${activeSection === item.id
                         ? 'bg-primary-600 text-white'
-                        : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200'
+                        : 'text-slate-600 dark:text-zinc-400 hover:bg-slate-200/60 dark:hover:bg-dark-200 hover:text-slate-900 dark:hover:text-white'
                       }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}

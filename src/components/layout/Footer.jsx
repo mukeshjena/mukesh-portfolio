@@ -59,7 +59,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white relative overflow-hidden">
+    <footer className="bg-slate-950 dark:bg-dark-100 text-white relative overflow-hidden border-t border-slate-800/80 dark:border-white/[0.08]">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -69,7 +69,7 @@ const Footer = () => {
 
       <div className="container relative">
         {/* Main Footer Content */}
-        <div className="py-12 border-b border-gray-800 dark:border-gray-700">
+        <div className="py-12 border-b border-slate-800/80 dark:border-white/[0.08]">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Brand Section */}
             <motion.div
@@ -185,7 +185,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-3 bg-gray-800 dark:bg-gray-900 rounded-full text-gray-400 border border-gray-700/60 ${social.hoverColor} transition-colors duration-200`}
+                  className={`p-3 bg-slate-900 dark:bg-dark-200 rounded-full text-slate-400 border border-slate-800 dark:border-white/[0.08] ${social.hoverColor} transition-colors duration-200`}
                   aria-label={social.name}
                 >
                   <social.icon className="text-lg" />

@@ -70,7 +70,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-dark-100">
+    <section id="about" className="py-20 bg-slate-50 dark:bg-dark-100">
       <div className="container">
         <motion.div
           variants={containerVariants}
@@ -88,7 +88,7 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6 tracking-tight">
               Passionate About <span className="gradient-text">Innovation</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
               Let me introduce myself and share my journey in technology
             </p>
           </motion.div>
@@ -107,7 +107,7 @@ const About = () => {
                     transition={{ delay: card.delay }}
                     className="group"
                   >
-                    <div className="bg-white dark:bg-dark-200 rounded-2xl p-6 border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 dark:hover:border-primary-500/40 transition-colors duration-200 ease-out">
+                    <div className="bg-white dark:bg-dark-200 rounded-2xl p-6 border border-slate-200/80 dark:border-white/[0.08] hover:border-primary-400/60 dark:hover:border-primary-500/50 transition-colors duration-200 ease-out">
                       <div className="flex items-center space-x-4">
                         <div
                           className={`w-14 h-14 rounded-xl ${card.color} border flex items-center justify-center transition-colors duration-200`}
@@ -115,7 +115,7 @@ const About = () => {
                           <card.icon className="text-xl" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                          <h3 className="text-lg font-semibold text-slate-900 dark:text-zinc-100 mb-1">
                             {card.title}
                           </h3>
                           <p className="text-2xl font-bold gradient-text tabular-nums">
@@ -134,14 +134,14 @@ const About = () => {
               <div className="space-y-6">
                 <motion.h3
                   variants={itemVariants}
-                  className="text-2xl md:text-3xl font-bold font-heading text-gray-900 dark:text-white tracking-tight"
+                  className="text-2xl md:text-3xl font-bold font-heading text-slate-900 dark:text-zinc-100 tracking-tight"
                 >
                   I'm {personalInfo.name}
                 </motion.h3>
                 
                 <motion.p
                   variants={itemVariants}
-                  className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-prose"
+                  className="text-lg text-slate-600 dark:text-zinc-400 leading-relaxed max-w-prose"
                 >
                   {personalInfo.description}
                 </motion.p>
@@ -153,7 +153,7 @@ const About = () => {
                   {['Flutter Development', 'ASP.NET Core', 'Mobile Apps', 'Web Solutions'].map((skill, i) => (
                     <div key={i} className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                      <span className="text-gray-700 dark:text-gray-300">{skill}</span>
+                      <span className="text-slate-700 dark:text-zinc-300 text-sm font-medium">{skill}</span>
                     </div>
                   ))}
                 </motion.div>

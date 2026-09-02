@@ -124,7 +124,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-gray-50 dark:bg-dark-200">
+    <section id="contact" className="section-padding bg-slate-50 dark:bg-dark-100">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -151,7 +151,7 @@ const Contact = () => {
           {/* Contact Information */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold font-heading mb-6 text-gray-900 dark:text-white tracking-tight">
+              <h3 className="text-2xl font-bold font-heading mb-6 text-slate-900 dark:text-zinc-100 tracking-tight">
                 Talk to me
               </h3>
               <div className="space-y-6">
@@ -166,10 +166,10 @@ const Contact = () => {
                         <method.icon className="text-xl" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-gray-900 dark:text-white">
+                        <h4 className="font-semibold text-slate-900 dark:text-zinc-100">
                           {method.title}
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                        <p className="text-slate-600 dark:text-zinc-400 text-sm">
                           {method.info}
                         </p>
                       </div>
@@ -196,13 +196,13 @@ const Contact = () => {
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold font-heading mb-6 text-gray-900 dark:text-white tracking-tight">
+            <h3 className="text-2xl font-bold font-heading mb-6 text-slate-900 dark:text-zinc-100 tracking-tight">
               Write Me Your Message
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <motion.div variants={itemVariants}>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-slate-700 dark:text-zinc-300 mb-2">
                   <FaUser className="inline mr-2" />
                   Name
                 </label>
@@ -212,13 +212,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 border border-gray-200/60 dark:border-gray-700/60 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-300 dark:text-white transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-slate-200/80 dark:border-white/[0.08] rounded-xl focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white dark:bg-dark-300 dark:text-white transition-colors duration-200"
                   required
                 />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-slate-700 dark:text-zinc-300 mb-2">
                   <FaEnvelope className="inline mr-2" />
                   Email
                 </label>
@@ -228,13 +228,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 border border-gray-200/60 dark:border-gray-700/60 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-300 dark:text-white transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-slate-200/80 dark:border-white/[0.08] rounded-xl focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white dark:bg-dark-300 dark:text-white transition-colors duration-200"
                   required
                 />
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-slate-700 dark:text-zinc-300 mb-2">
                   <FaMessage className="inline mr-2" />
                   Message
                 </label>
@@ -244,7 +244,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   placeholder="Write your message here..."
                   rows="6"
-                  className="w-full px-4 py-3 border border-gray-200/60 dark:border-gray-700/60 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-300 dark:text-white resize-none transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-slate-200/80 dark:border-white/[0.08] rounded-xl focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white dark:bg-dark-300 dark:text-white resize-none transition-colors duration-200"
                   required
                 />
               </motion.div>

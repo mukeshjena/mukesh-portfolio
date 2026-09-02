@@ -9,7 +9,7 @@ import Footer from '../components/layout/Footer';
 
 function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-100 text-gray-900 dark:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-dark-100 text-slate-900 dark:text-zinc-100 transition-colors duration-200">
       <Header />
       <main>
         <Hero />

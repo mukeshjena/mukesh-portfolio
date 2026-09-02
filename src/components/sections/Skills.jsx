@@ -127,7 +127,7 @@ const Skills = () =>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6 tracking-tight">
               Technical <span className="gradient-text">Expertise</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
               Here are the technologies and tools I work with to bring ideas to life
             </p>
           </motion.div>
@@ -138,16 +138,16 @@ const Skills = () =>
               <motion.div
                 key={category.key}
                 variants={itemVariants}
-                className="bg-gray-50 dark:bg-dark-100 rounded-2xl p-8 border border-gray-200/60 dark:border-gray-700/60 transition-colors duration-200 ease-out hover:border-primary-400/50 dark:hover:border-primary-500/40"
+                className="bg-slate-50 dark:bg-dark-100 rounded-2xl p-8 border border-slate-200/80 dark:border-white/[0.08] transition-colors duration-200 ease-out hover:border-primary-400/60 dark:hover:border-primary-500/50"
               >
                 {/* Category Header */}
                 <div className="flex items-center space-x-4 mb-8">
                   <div
-                    className={`w-14 h-14 rounded-2xl bg-white dark:bg-dark-200 border border-gray-200/60 dark:border-gray-700/60 flex items-center justify-center`}
+                    className={`w-14 h-14 rounded-2xl bg-white dark:bg-dark-200 border border-slate-200/80 dark:border-white/[0.08] flex items-center justify-center`}
                   >
                     <category.icon className={`text-2xl ${category.accentColor}`} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-zinc-100 tracking-tight">
                     {category.title}
                   </h3>
                 </div>
@@ -176,7 +176,7 @@ const Skills = () =>
                                 <IconComponent />
                               </div>
                             )}
-                            <span className="font-semibold text-gray-900 dark:text-white">
+                            <span className="font-semibold text-slate-900 dark:text-zinc-100">
                               {skill.name}
                             </span>
                           </div>
@@ -187,7 +187,7 @@ const Skills = () =>
 
                         {/* Progress Bar */}
                         <div className="relative">
-                          <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                          <div className="h-2 bg-slate-200/70 dark:bg-zinc-800 rounded-full overflow-hidden">
                             <motion.div
                               className={`h-full ${getLevelColor(skill.level)} rounded-full relative`}
                               initial={{ width: 0 }}

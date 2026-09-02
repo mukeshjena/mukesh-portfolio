@@ -103,7 +103,7 @@ const Services = () =>
 
   return (
     <>
-      <section id="services" className="py-20 bg-gray-50 dark:bg-dark-100">
+      <section id="services" className="py-20 bg-slate-50 dark:bg-dark-100">
         <div className="container">
           <motion.div
             variants={containerVariants}
@@ -121,7 +121,7 @@ const Services = () =>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6 tracking-tight">
                 What I <span className="gradient-text">Offer</span>
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
                 Professional services to help bring your digital ideas to life
               </p>
             </motion.div>
@@ -144,7 +144,7 @@ const Services = () =>
                     className="group cursor-pointer"
                     onClick={() => openModal(service)}
                   >
-                    <div className="bg-white dark:bg-dark-200 rounded-2xl p-8 border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 dark:hover:border-primary-500/40 transition-colors duration-200 ease-out relative overflow-hidden h-full flex flex-col">
+                    <div className="bg-white dark:bg-dark-200 rounded-2xl p-8 border border-slate-200/80 dark:border-white/[0.08] hover:border-primary-400/60 dark:hover:border-primary-500/50 transition-colors duration-200 ease-out relative overflow-hidden h-full flex flex-col">
                       {/* Icon */}
                       <div
                         className={`w-16 h-16 rounded-2xl ${accent.bg} border flex items-center justify-center mb-6 relative z-10`}
@@ -154,11 +154,11 @@ const Services = () =>
 
                       {/* Content */}
                       <div className="relative z-10 flex-1 flex flex-col">
-                        <h3 className={`text-xl font-bold text-gray-900 dark:text-white mb-4 ${accent.hover} transition-colors duration-200 tracking-tight`}>
+                        <h3 className={`text-xl font-bold text-slate-900 dark:text-zinc-100 mb-4 ${accent.hover} transition-colors duration-200 tracking-tight`}>
                           {service.title}
                         </h3>
 
-                        <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3 leading-relaxed">
+                        <p className="text-slate-600 dark:text-zinc-400 mb-6 line-clamp-3 leading-relaxed">
                           {service.description}
                         </p>
 
@@ -167,7 +167,7 @@ const Services = () =>
                           {service.features.slice(0, 2).map((feature, featureIndex) => (
                             <div key={featureIndex} className="flex items-center space-x-2">
                               <FaCheck className="text-primary-600 dark:text-primary-400 text-sm flex-shrink-0" />
-                              <span className="text-sm text-gray-600 dark:text-gray-400">
+                              <span className="text-sm text-slate-600 dark:text-zinc-400">
                                 {feature}
                               </span>
                             </div>
@@ -180,7 +180,7 @@ const Services = () =>
                         </div>
 
                         {/* CTA */}
-                        <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-200/40 dark:border-gray-700/40">
+                        <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-200/60 dark:border-white/[0.08]">
                           <span className="text-primary-600 dark:text-primary-400 font-semibold text-sm">
                             Learn More
                           </span>
@@ -206,7 +206,7 @@ const Services = () =>
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={closeModal}
           >
             <motion.div
@@ -214,11 +214,11 @@ const Services = () =>
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="bg-white dark:bg-dark-200 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-gray-200/60 dark:border-gray-700/60"
+              className="bg-white dark:bg-dark-200 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-200/80 dark:border-white/[0.08]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-8 border-b border-gray-200/60 dark:border-gray-700/60">
+              <div className="flex items-center justify-between p-8 border-b border-slate-200/80 dark:border-white/[0.08]">
                 <div className="flex items-center space-x-4">
                   <div className={`w-12 h-12 rounded-xl ${getServiceAccent(services.indexOf(selectedService)).bg} border flex items-center justify-center`}>
                     {iconMap[selectedService.icon] && (
@@ -229,13 +229,13 @@ const Services = () =>
                       })()
                     )}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-zinc-100 tracking-tight">
                     {selectedService.title}
                   </h3>
                 </div>
                 <motion.button
                   onClick={closeModal}
-                  className="w-10 h-10 rounded-full bg-gray-100 dark:bg-dark-300 flex items-center justify-center text-gray-600 dark:text-gray-400 border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 transition-colors duration-200"
+                  className="w-10 h-10 rounded-full bg-slate-100 dark:bg-dark-300 flex items-center justify-center text-slate-600 dark:text-zinc-400 border border-slate-200/80 dark:border-white/[0.08] hover:border-primary-400/50 transition-colors duration-200"
                   whileTap={{ scale: 0.95 }}
                 >
                   <FaTimes />
@@ -244,11 +244,11 @@ const Services = () =>
 
               {/* Modal Content */}
               <div className="p-8">
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="text-lg text-slate-600 dark:text-zinc-400 mb-8 leading-relaxed">
                   {selectedService.description}
                 </p>
 
-                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+                <h4 className="text-xl font-bold text-slate-900 dark:text-zinc-100 mb-6 tracking-tight">
                   What's Included:
                 </h4>
 
@@ -259,12 +259,12 @@ const Services = () =>
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-start space-x-3 p-4 bg-gray-50 dark:bg-dark-100 rounded-xl border border-gray-200/40 dark:border-gray-700/40"
+                      className="flex items-start space-x-3 p-4 bg-slate-50 dark:bg-dark-100/70 rounded-xl border border-slate-200/60 dark:border-white/[0.08]"
                     >
                       <div className="w-6 h-6 rounded-full bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center flex-shrink-0 mt-0.5 border border-primary-200/40 dark:border-primary-700/40">
                         <FaCheck className="text-primary-600 dark:text-primary-400 text-sm" />
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      <span className="text-slate-700 dark:text-zinc-300 leading-relaxed">
                         {feature}
                       </span>
                     </motion.div>

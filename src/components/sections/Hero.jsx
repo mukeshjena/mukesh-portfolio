@@ -95,14 +95,14 @@ const Hero = () =>
 
             <motion.h2
               variants={itemVariants}
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-medium tracking-tight"
+              className="text-xl sm:text-2xl lg:text-3xl text-slate-600 dark:text-zinc-300 mb-6 font-medium tracking-tight"
             >
               {personalInfo.title}
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-lg text-slate-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
               {personalInfo.subtitle}
             </motion.p>
@@ -138,7 +138,7 @@ const Hero = () =>
             >
               {[
                 { icon: FaLinkedin, url: socialLinks.linkedin, hoverColor: 'hover:text-blue-600 hover:border-blue-500/50' },
-                { icon: FaGithub, url: socialLinks.github, hoverColor: 'hover:text-gray-900 dark:hover:text-white hover:border-gray-500/50' },
+                { icon: FaGithub, url: socialLinks.github, hoverColor: 'hover:text-slate-900 dark:hover:text-white hover:border-slate-500/50' },
                 { icon: FaFacebook, url: socialLinks.facebook, hoverColor: 'hover:text-blue-700 hover:border-blue-600/50' },
               ].map((social, index) => (
                 <motion.a
@@ -146,7 +146,7 @@ const Hero = () =>
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-3 bg-white dark:bg-dark-200 rounded-full text-gray-600 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60 transition-colors duration-200 ease-out ${social.hoverColor}`}
+                  className={`p-3 bg-white dark:bg-dark-200 rounded-full text-slate-600 dark:text-zinc-400 border border-slate-200/80 dark:border-white/[0.08] transition-colors duration-200 ease-out ${social.hoverColor}`}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

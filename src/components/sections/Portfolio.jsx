@@ -95,7 +95,7 @@ const Portfolio = () =>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6 tracking-tight">
               Featured <span className="gradient-text">Work</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
               A showcase of my recent projects and creative solutions
             </p>
           </motion.div>
@@ -111,7 +111,7 @@ const Portfolio = () =>
                 onClick={() => setActiveFilter(filter.key)}
                 className={`px-6 py-3 rounded-full font-medium transition-colors duration-200 ease-out border ${activeFilter === filter.key
                   ? 'bg-primary-600 text-white border-primary-600'
-                  : 'bg-gray-100 dark:bg-dark-100 text-gray-600 dark:text-gray-400 border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 hover:text-primary-600 dark:hover:text-primary-400'
+                  : 'bg-slate-100 dark:bg-dark-100 text-slate-600 dark:text-zinc-400 border-slate-200/80 dark:border-white/[0.08] hover:border-primary-400/50 hover:text-primary-600 dark:hover:text-primary-400'
                   }`}
                 whileTap={{ scale: 0.98 }}
               >
@@ -136,7 +136,7 @@ const Portfolio = () =>
                   exit="exit"
                   onHoverStart={() => setHoveredProject(project.id)}
                   onHoverEnd={() => setHoveredProject(null)}
-                  className="group relative bg-white dark:bg-dark-100 rounded-2xl overflow-hidden border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 dark:hover:border-primary-500/40 transition-colors duration-200 ease-out"
+                  className="group relative bg-white dark:bg-dark-100 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-white/[0.08] hover:border-primary-400/60 dark:hover:border-primary-500/50 transition-colors duration-200 ease-out"
                 >
                   {/* Featured Badge */}
                   {project.featured && (
@@ -165,7 +165,7 @@ const Portfolio = () =>
 
                     {/* Overlay */}
                     <motion.div
-                      className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                      className="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                       initial={false}
                     >
                       <div className="flex space-x-4">
@@ -218,11 +218,11 @@ const Portfolio = () =>
 
                   {/* Project Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200 tracking-tight">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-zinc-100 mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200 tracking-tight">
                       {project.title}
                     </h3>
 
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 leading-relaxed">
+                    <p className="text-slate-600 dark:text-zinc-400 mb-4 line-clamp-2 leading-relaxed">
                       {project.description}
                     </p>
 
@@ -231,7 +231,7 @@ const Portfolio = () =>
                       {project.technologies.slice(0, 3).map((tech, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-gray-100 dark:bg-dark-200 text-gray-700 dark:text-gray-300 text-xs rounded-full font-medium border border-gray-200/40 dark:border-gray-700/40"
+                          className="px-3 py-1 bg-slate-100 dark:bg-dark-200 text-slate-700 dark:text-zinc-300 text-xs rounded-full font-medium border border-slate-200/60 dark:border-white/[0.08]"
                         >
                           {tech}
                         </span>
@@ -244,7 +244,7 @@ const Portfolio = () =>
                     </div>
 
                     {/* Project Links */}
-                    <div className="flex items-center justify-between pt-4 border-t border-gray-200/40 dark:border-gray-700/40">
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-200/60 dark:border-white/[0.08]">
                       <div className="flex space-x-3">
                         {project.link && project.link !== '#' && (
                           <a
