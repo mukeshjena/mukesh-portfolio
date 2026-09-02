@@ -3,7 +3,7 @@ export const personalInfo = {
   title: "Dot Net Developer",
   subtitle: "ASP.NET Core | MVC | C# | WebAPI | SQL Server | Microservices | Docker | Azure | Entity Framework | jQuery",
   description: "I'm Mukesh Jena, a passionate Dot Net Developer specializing in ASP.NET Core, MVC, C#, WebAPI, and SQL Server. I excel at building robust, scalable backend systems and delivering high-quality web solutions using the latest Microsoft technologies.",
-  email: "muk3shjena@gmail.com",
+  email: "info@mukeshjena.com",
   phone: "7735317930",
   location: "Nahara, Demuria, Jaleswer, Balasore, Odisha",
   experience: "1 Years Working",

@@ -332,7 +332,7 @@ const VexFastPrivacyBrowserPrivacyPolicy = () => {
                 </p>
                 <div className="mt-4 p-4 bg-gray-100 dark:bg-dark-300 rounded-lg">
                   <p className="text-gray-700 dark:text-gray-300">
-                    <strong>Email:</strong> muk3shjena@gmail.com
+                    <strong>Email:</strong> info@mukeshjena.com
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 mt-2">
                     <strong>GitHub:</strong> <a href="https://github.com/mukeshjena/void-browser" className="text-blue-600 dark:text-blue-400 hover:underline">github.com/mukeshjena/void-browser</a>
