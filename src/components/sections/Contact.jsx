@@ -80,7 +80,7 @@ const Contact = () => {
       info: personalInfo.email,
       action: 'Email Me',
       link: `mailto:${personalInfo.email}`,
-      color: 'bg-red-500'
+      accent: 'bg-red-500/10 text-red-600 border-red-200/40 dark:border-red-800/40'
     },
     {
       icon: FaWhatsapp,
@@ -88,7 +88,7 @@ const Contact = () => {
       info: 'Available 24/7',
       action: 'Text Me',
       link: socialLinks.whatsapp,
-      color: 'bg-green-500'
+      accent: 'bg-green-500/10 text-green-600 border-green-200/40 dark:border-green-800/40'
     },
     {
       icon: FaLinkedin,
@@ -96,7 +96,7 @@ const Contact = () => {
       info: 'Professional Network',
       action: 'Connect Me',
       link: socialLinks.linkedin,
-      color: 'bg-blue-600'
+      accent: 'bg-blue-500/10 text-blue-600 border-blue-200/40 dark:border-blue-800/40'
     }
   ];
 
@@ -132,7 +132,8 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-4">
+          <span className="section-eyebrow">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
             Get in touch
           </span>
           <h2 className="section-title">Contact Me</h2>
@@ -150,7 +151,7 @@ const Contact = () => {
           {/* Contact Information */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold font-heading mb-6 text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-bold font-heading mb-6 text-gray-900 dark:text-white tracking-tight">
                 Talk to me
               </h3>
               <div className="space-y-6">
@@ -159,10 +160,9 @@ const Contact = () => {
                     key={index}
                     variants={itemVariants}
                     className="card card-hover group"
-                    whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex items-center space-x-4">
-                      <div className={`p-3 rounded-lg ${method.color} text-white group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`p-3 rounded-xl ${method.accent} border transition-colors duration-200`}>
                         <method.icon className="text-xl" />
                       </div>
                       <div className="flex-1">
@@ -178,8 +178,7 @@ const Contact = () => {
                       href={method.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium mt-4 group-hover:translate-x-2 transition-transform duration-300"
-                      whileHover={{ x: 5 }}
+                      className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium mt-4 transition-colors duration-200"
                     >
                       <span>{method.action}</span>
                       <motion.div
@@ -197,7 +196,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold font-heading mb-6 text-gray-900 dark:text-white">
+            <h3 className="text-2xl font-bold font-heading mb-6 text-gray-900 dark:text-white tracking-tight">
               Write Me Your Message
             </h3>
             
@@ -213,7 +212,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder="Enter your name"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-dark-400 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-dark-300 dark:text-white transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200/60 dark:border-gray-700/60 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-300 dark:text-white transition-colors duration-200"
                   required
                 />
               </motion.div>
@@ -229,7 +228,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-dark-400 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-dark-300 dark:text-white transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200/60 dark:border-gray-700/60 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-300 dark:text-white transition-colors duration-200"
                   required
                 />
               </motion.div>
@@ -245,7 +244,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   placeholder="Write your message here..."
                   rows="6"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-dark-400 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-dark-300 dark:text-white resize-none transition-all duration-300"
+                  className="w-full px-4 py-3 border border-gray-200/60 dark:border-gray-700/60 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-300 dark:text-white resize-none transition-colors duration-200"
                   required
                 />
               </motion.div>
@@ -254,7 +253,6 @@ const Contact = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
-                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 variants={itemVariants}
               >
@@ -282,10 +280,10 @@ const Contact = () => {
           exit={{ opacity: 0, x: 300 }}
           className="fixed top-20 right-4 z-50 max-w-sm"
         >
-          <div className={`p-4 rounded-lg shadow-lg ${
+          <div className={`p-4 rounded-xl border ${
             toastType === 'success' 
-              ? 'bg-green-500 text-white' 
-              : 'bg-red-500 text-white'
+              ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 border-emerald-200/60 dark:border-emerald-700/40' 
+              : 'bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-300 border-red-200/60 dark:border-red-700/40'
           }`}>
             <div className="flex items-center space-x-3">
               <div className="flex-shrink-0">
@@ -299,7 +297,7 @@ const Contact = () => {
                 <div className="font-semibold">
                   {toastType === 'success' ? 'Success' : 'Error'}
                 </div>
-                <div className="text-sm">
+                <div className="text-sm opacity-80">
                   {toastMessage || (toastType === 'success' 
                     ? 'Your message has been sent successfully!' 
                     : 'Failed to send message. Please try again.')
@@ -308,7 +306,7 @@ const Contact = () => {
               </div>
               <button
                 onClick={() => setShowToast(false)}
-                className="flex-shrink-0 text-white hover:text-gray-200"
+                className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-200"
               >
                 <FaTimes />
               </button>
@@ -317,7 +315,9 @@ const Contact = () => {
               initial={{ width: '100%' }}
               animate={{ width: '0%' }}
               transition={{ duration: 5, ease: 'linear' }}
-              className="h-1 bg-white/30 mt-2 rounded-full"
+              className={`h-1 mt-2 rounded-full ${
+                toastType === 'success' ? 'bg-emerald-300/50' : 'bg-red-300/50'
+              }`}
             />
           </div>
         </motion.div>

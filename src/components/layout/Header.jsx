@@ -70,15 +70,15 @@ const Header = () =>
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/80 dark:bg-dark-100/80 backdrop-blur-lg shadow-lg'
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ease-out ${isScrolled
+          ? 'bg-white/80 dark:bg-dark-100/80 backdrop-blur-lg border-b border-gray-200/60 dark:border-gray-700/60'
           : 'bg-transparent'
         }`}
     >
       <nav className="container flex items-center justify-between py-4">
         {/* Logo */}
         <motion.div
-          whileHover={{ scale: 1.05 }}
           className="text-2xl font-bold font-heading gradient-text cursor-pointer"
           onClick={() => scrollToSection('home')}
         >
@@ -91,11 +91,10 @@ const Header = () =>
             <motion.button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`relative p-3 rounded-full transition-all duration-300 ${activeSection === item.id
-                  ? 'bg-primary-600 text-white shadow-lg'
+              className={`relative p-3 rounded-full transition-colors duration-200 ease-out ${activeSection === item.id
+                  ? 'bg-primary-600 text-white'
                   : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
                 }`}
-              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <item.icon className="text-lg" />
@@ -116,8 +115,7 @@ const Header = () =>
           {/* Theme Toggle */}
           <motion.button
             onClick={toggleTheme}
-            className="p-3 rounded-full bg-gray-100 dark:bg-dark-200 text-gray-600 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors"
-            whileHover={{ scale: 1.1, rotate: 180 }}
+            className="p-3 rounded-full bg-gray-100 dark:bg-dark-200 text-gray-600 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
             whileTap={{ scale: 0.95 }}
           >
             {isDark ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
@@ -126,8 +124,7 @@ const Header = () =>
           {/* Mobile Menu Toggle */}
           <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 rounded-full bg-gray-100 dark:bg-dark-200 text-gray-600 dark:text-gray-300"
-            whileHover={{ scale: 1.1 }}
+            className="md:hidden p-3 rounded-full bg-gray-100 dark:bg-dark-200 text-gray-600 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60"
             whileTap={{ scale: 0.95 }}
           >
             {isMenuOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
@@ -142,7 +139,7 @@ const Header = () =>
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-dark-100 border-t border-gray-200 dark:border-dark-300"
+            className="md:hidden bg-white dark:bg-dark-100 border-t border-gray-200/60 dark:border-gray-700/60"
           >
             <div className="container py-4">
               <div className="flex flex-col space-y-2">
@@ -150,7 +147,7 @@ const Header = () =>
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${activeSection === item.id
+                    className={`flex items-center space-x-3 p-3 rounded-lg transition-colors duration-200 ease-out ${activeSection === item.id
                         ? 'bg-primary-600 text-white'
                         : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-200'
                       }`}

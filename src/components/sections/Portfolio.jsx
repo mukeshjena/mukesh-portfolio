@@ -43,10 +43,10 @@ const Portfolio = () =>
   };
 
   const projectVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
-      scale: 1,
+      y: 0,
       transition: {
         duration: 0.5,
         ease: 'easeOut',
@@ -54,25 +54,25 @@ const Portfolio = () =>
     },
     exit: {
       opacity: 0,
-      scale: 0.8,
+      y: 30,
       transition: {
         duration: 0.3,
       },
     },
   };
 
-  const getCategoryColor = (category) =>
+  const getCategoryBadge = (category) =>
   {
     switch (category)
     {
       case 'web':
-        return 'from-blue-500 to-purple-600';
+        return 'bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-200/60 dark:border-blue-700/40';
       case 'mobile':
-        return 'from-green-500 to-teal-600';
+        return 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-700/40';
       case 'design':
-        return 'from-pink-500 to-rose-600';
+        return 'bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-200/60 dark:border-rose-700/40';
       default:
-        return 'from-gray-500 to-gray-600';
+        return 'bg-gray-500/10 text-gray-700 dark:text-gray-400 border-gray-200/60 dark:border-gray-700/40';
     }
   };
 
@@ -83,18 +83,19 @@ const Portfolio = () =>
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0 }} // changed from 0.3 to 0
+          viewport={{ once: true, amount: 0 }}
           className="max-w-7xl mx-auto"
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-4">
+            <span className="section-eyebrow">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
               Portfolio
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6 tracking-tight">
               Featured <span className="gradient-text">Work</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
               A showcase of my recent projects and creative solutions
             </p>
           </motion.div>
@@ -108,12 +109,11 @@ const Portfolio = () =>
               <motion.button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeFilter === filter.key
-                  ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/25'
-                  : 'bg-gray-100 dark:bg-dark-100 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800'
+                className={`px-6 py-3 rounded-full font-medium transition-colors duration-200 ease-out border ${activeFilter === filter.key
+                  ? 'bg-primary-600 text-white border-primary-600'
+                  : 'bg-gray-100 dark:bg-dark-100 text-gray-600 dark:text-gray-400 border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 hover:text-primary-600 dark:hover:text-primary-400'
                   }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {filter.label}
               </motion.button>
@@ -134,18 +134,17 @@ const Portfolio = () =>
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  whileHover={{ y: -10 }}
                   onHoverStart={() => setHoveredProject(project.id)}
                   onHoverEnd={() => setHoveredProject(null)}
-                  className="group relative bg-white dark:bg-dark-100 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                  className="group relative bg-white dark:bg-dark-100 rounded-2xl overflow-hidden border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 dark:hover:border-primary-500/40 transition-colors duration-200 ease-out"
                 >
                   {/* Featured Badge */}
                   {project.featured && (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       transition={{ delay: 0.2 }}
-                      className="absolute top-4 right-4 z-20 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center space-x-1 shadow-lg"
+                      className="absolute top-4 right-4 z-20 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 px-3 py-1 rounded-full text-xs font-semibold flex items-center space-x-1 border border-amber-200/60 dark:border-amber-700/40"
                     >
                       <FaStar className="text-xs" />
                       <span>Featured</span>
@@ -154,10 +153,10 @@ const Portfolio = () =>
 
                   {/* Project Image */}
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <motion.img
+                    <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                       onError={(e) =>
                       {
                         e.target.src = `https://via.placeholder.com/400x300/0ea5e9/ffffff?text=${encodeURIComponent(project.title)}`;
@@ -166,7 +165,7 @@ const Portfolio = () =>
 
                     {/* Overlay */}
                     <motion.div
-                      className={`absolute inset-0 bg-gradient-to-t ${getCategoryColor(project.category)} opacity-0 group-hover:opacity-90 transition-opacity duration-500 flex items-center justify-center`}
+                      className="absolute inset-0 bg-gray-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                       initial={false}
                     >
                       <div className="flex space-x-4">
@@ -175,9 +174,7 @@ const Portfolio = () =>
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-300"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
+                            className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 hover:border-primary-400/60 hover:bg-white/20 transition-colors duration-200"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: hoveredProject === project.id ? 1 : 0, y: hoveredProject === project.id ? 0 : 20 }}
                             transition={{ delay: 0.1 }}
@@ -191,9 +188,7 @@ const Portfolio = () =>
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-300"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
+                            className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 hover:border-primary-400/60 hover:bg-white/20 transition-colors duration-200"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: hoveredProject === project.id ? 1 : 0, y: hoveredProject === project.id ? 0 : 20 }}
                             transition={{ delay: 0.2 }}
@@ -203,9 +198,7 @@ const Portfolio = () =>
                         )}
 
                         <motion.button
-                          className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors duration-300"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
+                          className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 hover:border-primary-400/60 hover:bg-white/20 transition-colors duration-200"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: hoveredProject === project.id ? 1 : 0, y: hoveredProject === project.id ? 0 : 20 }}
                           transition={{ delay: 0.3 }}
@@ -217,7 +210,7 @@ const Portfolio = () =>
 
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4 z-10">
-                      <span className={`px-3 py-1 bg-gradient-to-r ${getCategoryColor(project.category)} text-white text-xs font-semibold rounded-full shadow-lg capitalize`}>
+                      <span className={`px-3 py-1 text-xs font-semibold rounded-full capitalize border ${getCategoryBadge(project.category)}`}>
                         {project.category}
                       </span>
                     </div>
@@ -225,11 +218,11 @@ const Portfolio = () =>
 
                   {/* Project Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200 tracking-tight">
                       {project.title}
                     </h3>
 
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 leading-relaxed">
                       {project.description}
                     </p>
 
@@ -238,62 +231,51 @@ const Portfolio = () =>
                       {project.technologies.slice(0, 3).map((tech, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-gray-100 dark:bg-dark-200 text-gray-700 dark:text-gray-300 text-xs rounded-full font-medium"
+                          className="px-3 py-1 bg-gray-100 dark:bg-dark-200 text-gray-700 dark:text-gray-300 text-xs rounded-full font-medium border border-gray-200/40 dark:border-gray-700/40"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 3 && (
-                        <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 text-xs rounded-full font-medium">
+                        <span className="px-3 py-1 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs rounded-full font-medium border border-primary-200/40 dark:border-primary-700/40">
                           +{project.technologies.length - 3}
                         </span>
                       )}
                     </div>
 
                     {/* Project Links */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-200/40 dark:border-gray-700/40">
                       <div className="flex space-x-3">
                         {project.link && project.link !== '#' && (
-                          <motion.a
+                          <a
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
-                            whileHover={{ scale: 1.1 }}
+                            className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
                             title="Live Demo"
                           >
                             <FaExternalLinkAlt />
-                          </motion.a>
+                          </a>
                         )}
 
                         {project.github && project.github !== '#' && (
-                          <motion.a
+                          <a
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-                            whileHover={{ scale: 1.1 }}
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
                             title="Source Code"
                           >
                             <FaGithub />
-                          </motion.a>
+                          </a>
                         )}
                       </div>
 
-                      <motion.span
-                        className="text-primary-600 dark:text-primary-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        whileHover={{ x: 5 }}
-                      >
+                      <span className="text-primary-600 dark:text-primary-400 text-sm font-medium opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">
                         View Details →
-                      </motion.span>
+                      </span>
                     </div>
                   </div>
-
-                  {/* Animated border */}
-                  <motion.div
-                    className="absolute inset-0 border-2 border-transparent group-hover:border-primary-200 dark:group-hover:border-primary-800 rounded-3xl transition-all duration-300"
-                    initial={false}
-                  />
                 </motion.div>
               ))}
             </AnimatePresence>

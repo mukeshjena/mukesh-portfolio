@@ -34,10 +34,10 @@ const About = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
-      scale: 1,
+      y: 0,
       transition: {
         duration: 0.5,
         ease: 'easeOut',
@@ -50,21 +50,21 @@ const About = () => {
       icon: FaUser,
       title: 'Experience',
       value: personalInfo.experience,
-      color: 'from-blue-500 to-purple-600',
+      color: 'bg-primary-500/10 text-primary-600 border-primary-200/40 dark:border-primary-800/40',
       delay: 0.1,
     },
     {
       icon: FaProjectDiagram,
       title: 'Projects',
       value: personalInfo.projects,
-      color: 'from-green-500 to-teal-600',
+      color: 'bg-emerald-500/10 text-emerald-600 border-emerald-200/40 dark:border-emerald-800/40',
       delay: 0.2,
     },
     {
       icon: FaHandsHelping,
       title: 'Support',
       value: personalInfo.availability,
-      color: 'from-orange-500 to-red-600',
+      color: 'bg-orange-500/10 text-orange-600 border-orange-200/40 dark:border-orange-800/40',
       delay: 0.3,
     },
   ];
@@ -81,13 +81,14 @@ const About = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-4">
+            <span className="section-eyebrow">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
               About Me
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading mb-6 tracking-tight">
               Passionate About <span className="gradient-text">Innovation</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
               Let me introduce myself and share my journey in technology
             </p>
           </motion.div>
@@ -104,36 +105,24 @@ const About = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ delay: card.delay }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      transition: { duration: 0.2 }
-                    }}
-                    className="group relative overflow-hidden"
+                    className="group"
                   >
-                    <div className="bg-white dark:bg-dark-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
+                    <div className="bg-white dark:bg-dark-200 rounded-2xl p-6 border border-gray-200/60 dark:border-gray-700/60 hover:border-primary-400/50 dark:hover:border-primary-500/40 transition-colors duration-200 ease-out">
                       <div className="flex items-center space-x-4">
-                        <motion.div
-                          whileHover={{ rotate: 360 }}
-                          transition={{ duration: 0.5 }}
-                          className={`w-14 h-14 rounded-xl bg-gradient-to-r ${card.color} flex items-center justify-center shadow-lg`}
+                        <div
+                          className={`w-14 h-14 rounded-xl ${card.color} border flex items-center justify-center transition-colors duration-200`}
                         >
-                          <card.icon className="text-white text-xl" />
-                        </motion.div>
+                          <card.icon className="text-xl" />
+                        </div>
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                             {card.title}
                           </h3>
-                          <p className="text-2xl font-bold gradient-text">
+                          <p className="text-2xl font-bold gradient-text tabular-nums">
                             {card.value}
                           </p>
                         </div>
                       </div>
-                      
-                      {/* Animated background */}
-                      <motion.div
-                        className={`absolute inset-0 bg-gradient-to-r ${card.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}
-                        initial={false}
-                      />
                     </div>
                   </motion.div>
                 ))}
@@ -145,14 +134,14 @@ const About = () => {
               <div className="space-y-6">
                 <motion.h3
                   variants={itemVariants}
-                  className="text-2xl md:text-3xl font-bold font-heading text-gray-900 dark:text-white"
+                  className="text-2xl md:text-3xl font-bold font-heading text-gray-900 dark:text-white tracking-tight"
                 >
                   I'm {personalInfo.name}
                 </motion.h3>
                 
                 <motion.p
                   variants={itemVariants}
-                  className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+                  className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-prose"
                 >
                   {personalInfo.description}
                 </motion.p>
@@ -161,22 +150,12 @@ const About = () => {
                   variants={itemVariants}
                   className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4"
                 >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-gray-700 dark:text-gray-300">Flutter Development</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-gray-700 dark:text-gray-300">ASP.NET Core</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-gray-700 dark:text-gray-300">Mobile Apps</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-gray-700 dark:text-gray-300">Web Solutions</span>
-                  </div>
+                  {['Flutter Development', 'ASP.NET Core', 'Mobile Apps', 'Web Solutions'].map((skill, i) => (
+                    <div key={i} className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                      <span className="text-gray-700 dark:text-gray-300">{skill}</span>
+                    </div>
+                  ))}
                 </motion.div>
               </div>
 
@@ -188,10 +167,9 @@ const About = () => {
                 <motion.button
                   onClick={() => scrollToSection('contact')}
                   className="btn btn-primary group"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <FaEnvelope className="mr-2 group-hover:animate-pulse" />
+                  <FaEnvelope className="mr-2" />
                   Let's Work Together
                 </motion.button>
               </motion.div>

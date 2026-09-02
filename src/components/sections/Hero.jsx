@@ -80,28 +80,29 @@ const Hero = () =>
           <div className="text-center lg:text-left">
             <motion.span
               variants={itemVariants}
-              className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/50 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-6"
+              className="section-eyebrow"
             >
+              <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
               Hello, I'm
             </motion.span>
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold font-heading mb-6 tracking-tight leading-[1.08]"
             >
               <span className="gradient-text">{personalInfo.name}</span>
             </motion.h1>
 
             <motion.h2
               variants={itemVariants}
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-medium"
+              className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6 font-medium tracking-tight"
             >
               {personalInfo.title}
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
-              className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
               {personalInfo.subtitle}
             </motion.p>
@@ -115,8 +116,7 @@ const Hero = () =>
                 href={personalInfo.resumeUrl}
                 download
                 className="btn btn-primary group"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <FaDownload className="mr-2 group-hover:animate-bounce" />
                 Download CV
@@ -125,8 +125,7 @@ const Hero = () =>
               <motion.button
                 onClick={() => scrollToSection('about')}
                 className="btn btn-ghost"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.98 }}
               >
                 About Me
               </motion.button>
@@ -138,17 +137,16 @@ const Hero = () =>
               className="flex justify-center lg:justify-start space-x-4"
             >
               {[
-                { icon: FaLinkedin, url: socialLinks.linkedin, color: 'hover:text-blue-600' },
-                { icon: FaGithub, url: socialLinks.github, color: 'hover:text-gray-900 dark:hover:text-white' },
-                { icon: FaFacebook, url: socialLinks.facebook, color: 'hover:text-blue-700' },
+                { icon: FaLinkedin, url: socialLinks.linkedin, hoverColor: 'hover:text-blue-600 hover:border-blue-500/50' },
+                { icon: FaGithub, url: socialLinks.github, hoverColor: 'hover:text-gray-900 dark:hover:text-white hover:border-gray-500/50' },
+                { icon: FaFacebook, url: socialLinks.facebook, hoverColor: 'hover:text-blue-700 hover:border-blue-600/50' },
               ].map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-3 bg-white dark:bg-dark-200 rounded-full shadow-md text-gray-600 dark:text-gray-300 transition-all duration-300 ${social.color} hover:shadow-lg`}
-                  whileHover={{ scale: 1.1, y: -2 }}
+                  className={`p-3 bg-white dark:bg-dark-200 rounded-full text-gray-600 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60 transition-colors duration-200 ease-out ${social.hoverColor}`}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -233,7 +231,7 @@ const Hero = () =>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            className="flex flex-col items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
           >
             <span className="text-sm font-medium mb-2">Scroll Down</span>
             <FaArrowDown className="text-xl" />

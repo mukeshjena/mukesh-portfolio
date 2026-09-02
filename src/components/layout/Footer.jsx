@@ -24,25 +24,25 @@ const Footer = () => {
     { 
       icon: FaFacebook, 
       url: socialLinks.facebook, 
-      color: 'hover:text-blue-600',
+      hoverColor: 'hover:text-blue-400 hover:border-blue-500/50',
       name: 'Facebook'
     },
     { 
       icon: FaTwitter, 
       url: socialLinks.twitter, 
-      color: 'hover:text-blue-400',
+      hoverColor: 'hover:text-sky-400 hover:border-sky-500/50',
       name: 'Twitter'
     },
     { 
       icon: FaLinkedin, 
       url: socialLinks.linkedin, 
-      color: 'hover:text-blue-700',
+      hoverColor: 'hover:text-blue-400 hover:border-blue-500/50',
       name: 'LinkedIn'
     },
     { 
       icon: FaInstagram, 
       url: socialLinks.instagram, 
-      color: 'hover:text-pink-600',
+      hoverColor: 'hover:text-pink-400 hover:border-pink-500/50',
       name: 'Instagram'
     },
   ];
@@ -78,13 +78,10 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
-              <motion.h3
-                className="text-3xl font-bold font-heading gradient-text"
-                whileHover={{ scale: 1.05 }}
-              >
+              <h3 className="text-3xl font-bold font-heading gradient-text tracking-tight">
                 {personalInfo.name.split(' ')[0]}
-              </motion.h3>
-              <p className="text-gray-400 max-w-md">
+              </h3>
+              <p className="text-gray-400 max-w-md leading-relaxed">
                 {personalInfo.description}
               </p>
               <div className="flex items-center space-x-2 text-gray-400">
@@ -106,16 +103,16 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-4"
             >
-              <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+              <h4 className="text-xl font-semibold mb-4 tracking-tight">Quick Links</h4>
               <ul className="space-y-3">
                 {navigationLinks.map((link, index) => (
                   <motion.li key={index}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-gray-400 hover:text-primary-400 transition-colors duration-300 flex items-center group"
+                      className="text-gray-400 hover:text-primary-400 transition-colors duration-200 flex items-center group"
                     >
                       <motion.span
-                        className="w-0 h-0.5 bg-primary-400 mr-0 group-hover:w-4 group-hover:mr-2 transition-all duration-300"
+                        className="w-0 h-0.5 bg-primary-400 mr-0 group-hover:w-4 group-hover:mr-2 transition-all duration-200"
                       />
                       {link.name}
                     </button>
@@ -131,13 +128,13 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-4"
             >
-              <h4 className="text-xl font-semibold mb-4">Get In Touch</h4>
+              <h4 className="text-xl font-semibold mb-4 tracking-tight">Get In Touch</h4>
               <div className="space-y-3 text-gray-400">
                 <div>
                   <p className="font-medium text-white">Email</p>
                   <a 
                     href={`mailto:${personalInfo.email}`}
-                    className="hover:text-primary-400 transition-colors duration-300"
+                    className="hover:text-primary-400 transition-colors duration-200"
                   >
                     {personalInfo.email}
                   </a>
@@ -146,7 +143,7 @@ const Footer = () => {
                   <p className="font-medium text-white">Phone</p>
                   <a 
                     href={`tel:${personalInfo.phone}`}
-                    className="hover:text-primary-400 transition-colors duration-300"
+                    className="hover:text-primary-400 transition-colors duration-200"
                   >
                     +91 {personalInfo.phone}
                   </a>
@@ -183,18 +180,16 @@ const Footer = () => {
               className="flex space-x-4"
             >
               {socialMedia.map((social, index) => (
-                <motion.a
+                <a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-3 bg-gray-800 dark:bg-gray-900 rounded-full text-gray-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
+                  className={`p-3 bg-gray-800 dark:bg-gray-900 rounded-full text-gray-400 border border-gray-700/60 ${social.hoverColor} transition-colors duration-200`}
                   aria-label={social.name}
                 >
                   <social.icon className="text-lg" />
-                </motion.a>
+                </a>
               ))}
             </motion.div>
           </div>
@@ -204,11 +199,10 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 p-4 bg-primary-600 text-white rounded-full shadow-lg hover:bg-primary-700 transition-all duration-300 z-40"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
+        className="fixed bottom-8 right-8 p-4 bg-primary-600 text-white rounded-full border border-primary-500/30 hover:bg-primary-700 transition-colors duration-200 z-40"
+        whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
         <FaArrowUp className="text-lg" />
