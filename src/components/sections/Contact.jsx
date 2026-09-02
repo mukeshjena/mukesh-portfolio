@@ -12,7 +12,7 @@ import {
 
 import { FaMessage } from 'react-icons/fa6';
 import { personalInfo, socialLinks } from '../../data/portfolioData';
-import emailjs from '@emailjs/browser';
+import { sendContactEmail } from '../../services/emailService';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +24,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState('success');
+  const [toastMessage, setToastMessage] = useState('');
 
   const handleInputChange = (e) => {
     setFormData({
@@ -32,8 +33,9 @@ const Contact = () => {
     });
   };
 
-  const showNotification = (type, title, message) => {
+  const showNotification = (type, message) => {
     setToastType(type);
+    setToastMessage(message);
     setShowToast(true);
     setTimeout(() => setShowToast(false), 5000);
   };
@@ -41,39 +43,31 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.message) {
-      showNotification('error', 'Error', 'Please fill in all fields');
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      showNotification('error', 'Please fill in all fields.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      showNotification('error', 'Please enter a valid email address.');
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      // Here you can integrate with EmailJS or any email service
-      // For now, we'll simulate sending
-      //await new Promise(resolve => setTimeout(resolve, 2000));
-      const today = new Date();
-      const dateStr = today.toLocaleString();
-      const year = today.getFullYear();
-
-      await emailjs.send(
-        "muk3shjena",  // Replace with your EmailJS Service ID
-        "muk3shjena-temp-us", // Replace with your EmailJS Template ID
-        {
-          from_name: formData.name,
-          reply_to: formData.email,
-          message: formData.message,
-          date: dateStr,
-          year: year,
-          title: "New Inquiry from Portfolio Website"
-        },
-        "xhA1H071J0P1O_OWN" // Replace with your EmailJS Public Key
-      );
+      await sendContactEmail({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      });
       
-      showNotification('success', 'Success', 'Your message has been sent successfully!');
+      showNotification('success', 'Your message has been sent successfully! I will get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      showNotification('error', 'Error', 'Failed to send message. Please try again.');
+      console.error('Contact form submission error:', error);
+      showNotification('error', error.message || 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -306,9 +300,9 @@ const Contact = () => {
                   {toastType === 'success' ? 'Success' : 'Error'}
                 </div>
                 <div className="text-sm">
-                  {toastType === 'success' 
+                  {toastMessage || (toastType === 'success' 
                     ? 'Your message has been sent successfully!' 
-                    : 'Failed to send message. Please try again.'
+                    : 'Failed to send message. Please try again.')
                   }
                 </div>
               </div>
