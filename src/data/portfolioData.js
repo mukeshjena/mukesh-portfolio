@@ -9,11 +9,11 @@ export const personalInfo = {
   experience: "1 Years Working",
   projects: "6+ Projects",
   availability: "Online 24/7",
-  resumeUrl: "https://drive.google.com/file/d/1CWsctRV1Hi-WYCNfTKaJ9ui-f7z0c2vm/view?usp=sharing",
+  resumeUrl: "https://drive.google.com/file/d/1Q2WSVVhrNKL49dsC-563qf29JvkarIEr/view?usp=sharing",
 };
 
 export const socialLinks = {
-  linkedin: "https://www.linkedin.com/in/mukesh-jena-7b9856261/",
+  linkedin: "https://www.linkedin.com/in/mukesh-jena/",
   github: "https://github.com/mukeshjena",
   facebook: "https://www.facebook.com/mukesh.jena.969",
   twitter: "https://twitter.com/mukesh_jena07",
